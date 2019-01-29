@@ -1,3 +1,27 @@
+def convert_word(word):
+    result = 0
+    for k in range(len(word), 0, -1):
+        result += (ord(word[k-1]) - ord('a') + 1)*pow(27, len(word)-k)
+    return result
+
+
+n = int(input())
+word_list = {}
+len_list = []
+
+for i in range(n):
+    w = input()
+    word_len = convert_word(w)
+
+    word_list[word_len] = w
+    len_list.append(word_len)
+
+len_list = list(set(len_list))
+len_list.sort()
+
+for j in len_list:
+    print(word_list[j])
+
 # n = int(input())
 # word_list = []
 #
@@ -29,28 +53,3 @@
 # for w in word_list:
 #     if w is not '':
 #         print(w)
-
-def convert_word(word):
-    result = 0
-    for k in range(len(word), 0, -1):
-        result += (ord(word[k-1]) - ord('a') + 1)*pow(26, len(word)-k)
-    return result
-
-
-n = int(input())
-word_list = {}
-len_list = []
-
-for i in range(n):
-    w = input()
-    word_len = convert_word(w)
-
-    word_list[word_len] = w
-    len_list.append(word_len)
-
-len_list = list(set(len_list))
-len_list.sort()
-
-for j in len_list:
-    print(word_list[j])
-
