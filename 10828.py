@@ -1,41 +1,34 @@
-queue = []
+stack = []
 
 
 def push(n):
-    queue.append(n)
+    stack.append(n)
 
 
 def pop():
-    if len(queue) == 0:
+    if len(stack) == 0:
         print(-1)
     else:
-        print(queue[0])
-        del queue[0]
+        print(stack[-1])
+        del stack[-1]
 
 
 def size():
-    print(len(queue))
+    print(len(stack))
 
 
 def empty():
-    if len(queue) == 0:
+    if len(stack) == 0:
         print(1)
     else:
         print(0)
 
 
-def front():
-    if len(queue) == 0:
+def top():
+    if len(stack) == 0:
         print(-1)
     else:
-        print(queue[0])
-
-
-def back():
-    if len(queue) == 0:
-        print(-1)
-    else:
-        print(queue[-1])
+        print(stack[-1])
 
 
 num = int(input())
@@ -49,9 +42,7 @@ for _ in range(num):
         size()
     elif order == 'empty':
         empty()
-    elif order == 'front':
-        front()
-    elif order == 'back':
-        back()
+    elif order == 'top':
+        top()
     else:
         push(order.split(" ")[1])
