@@ -1,4 +1,3 @@
-count = [0, 0, 0, 0, 0, 0]
 value = list(map(int, input().split()))
 
 if value[0] == value[1]:
