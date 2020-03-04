@@ -1,4 +1,7 @@
+import sys
+
 stack = []
+total = 0
 
 
 def push(n):
@@ -6,38 +9,40 @@ def push(n):
 
 
 def pop():
-    if len(stack) == 0:
+    if total == 0:
         print(-1)
     else:
-        print(stack[-1])
-        del stack[-1]
+        print(stack[total - 1])
+        del stack[total - 1]
 
 
 def size():
-    print(len(stack))
+    print(total)
 
 
 def empty():
-    if len(stack) == 0:
+    if total == 0:
         print(1)
     else:
         print(0)
 
 
 def top():
-    if len(stack) == 0:
+    if total == 0:
         print(-1)
     else:
-        print(stack[-1])
+        print(stack[total-1])
 
 
-num = int(input())
+num = int(sys.stdin.readline().rstrip())
 
 for _ in range(num):
-    order = input()
+    order = sys.stdin.readline().rstrip()
 
     if order == 'pop':
         pop()
+        if total != 0:
+            total -= 1
     elif order == 'size':
         size()
     elif order == 'empty':
@@ -45,4 +50,5 @@ for _ in range(num):
     elif order == 'top':
         top()
     else:
-        push(order.split(" ")[1])
+        total += 1
+        push(int(order.split()[1]))
