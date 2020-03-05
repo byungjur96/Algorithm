@@ -13,6 +13,6 @@ for i in range(n):
         if people[pos % n] is not None:
             count += 1
     result.append(str(people[pos % n]))
-    people[(pos % n)] = None
+    people[pos % n] = None
 print("<" + ", ".join(result) + ">")
 
