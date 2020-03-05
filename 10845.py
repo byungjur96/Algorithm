@@ -1,3 +1,5 @@
+import sys
+
 queue = []
 
 
@@ -38,10 +40,10 @@ def back():
         print(queue[-1])
 
 
-num = int(input())
+num = int(sys.stdin.readline().rstrip())
 
 for _ in range(num):
-    order = input()
+    order = sys.stdin.readline().rstrip()
 
     if order == 'pop':
         pop()
