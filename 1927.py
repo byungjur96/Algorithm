@@ -47,6 +47,5 @@ for _ in range(n):
         if len_heap > 1:
             val = len_heap
             while val > 0:
-                print(val)
                 min_heapify(val)
                 val = val // 2
