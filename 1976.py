@@ -6,6 +6,7 @@ def get_parent(x):
         return x
     return get_parent(graph[x])
 
+
 n = int(sys.stdin.readline().rstrip())
 m = int(sys.stdin.readline().rstrip())
 
