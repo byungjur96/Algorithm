@@ -17,7 +17,6 @@ def router_count(dis):
 
 
 xi.sort()
-
 start = 1
 end = xi[n - 1] - xi[0]
 
