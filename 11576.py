@@ -14,7 +14,6 @@ def dec_to_b(n, b):
     result.reverse()
     return result
 
-
 a, b = map(int, input().split())
 m = int(input())
 a_val = list(map(int, input().split()))
