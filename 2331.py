@@ -6,9 +6,7 @@ def cal(n, p):
     return result
 
 a, p = map(int, input().split())
-
 exist = []
-
 val = a
 
 while val not in exist:
