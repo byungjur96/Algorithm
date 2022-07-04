@@ -13,17 +13,16 @@ for _ in range(t):
     for idx, l in enumerate(lst):
         if root[idx] > root[l-1]:
             temp = root[idx]
-            for n in net[root[idx]]:
+            for n in net[temp]:
                 net[root[l-1]].append(n)
                 root[n-1] = root[l-1]
             del net[temp]
             root[idx] = root[l-1]
         elif root[idx] < root[l-1]:
             temp = root[l-1]
-            for n in net[root[l-1]]:
+            for n in net[temp]:
                 net[root[idx]].append(n)
                 root[n-1] = root[idx]
             del net[temp]
             root[l-1] = root[idx]
     print(len(net))
-        
