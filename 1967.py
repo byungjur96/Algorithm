@@ -14,7 +14,6 @@ def find_farthest(i, v, mat):
         for k in mat[val[0]+1]:
             if not visited[k-1]:
                 q.append([k-1, val[1]+mat[val[0]+1][k]])
-    print(temp)
     return [max(temp), temp.index(max(temp))]
 
 n = int(sys.stdin.readline())
